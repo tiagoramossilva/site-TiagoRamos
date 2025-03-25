@@ -196,6 +196,7 @@ section a:hover {
 .card h3 {
   font-size: 22px;
   padding: 20px;
+  text-align: center;
 }
 
 .card .tecnologias {
@@ -257,6 +258,8 @@ section a:hover {
 
 .valor h3 {
   color: var(--text-color);
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 /* Parágrafo */
@@ -281,23 +284,13 @@ section a:hover {
 @media (max-width: 768px) {
   /* Ajuste no menu lateral */
   .sidebar {
-    width: 200px;
-    position: absolute;
-    top: 0;
-    left: -250px; /* Esconde o menu lateral inicialmente */
-    height: 100%;
-    transition: left 0.3s ease; /* Transição suave para o menu */
-  }
-
-  /* Exibição do menu lateral quando acionado */
-  .sidebar.open {
-    left: 0;
+    display: none;
   }
 
   @media (max-width: 768px) {
     .theme-switcher {
-      position: fixed;
-      top: 10px;
+      position: absolute;
+      top: 50px;
       right: 10px;
     }
 
@@ -387,8 +380,8 @@ section a:hover {
   }
 
   .language-switcher {
-    position: fixed;
+    position: absolute;
     top: 10px;
-    left: 10px;
+    right: 10px;
   }
 }
