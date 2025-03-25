@@ -5,17 +5,79 @@
   box-sizing: border-box;
 }
 
+/* Variáveis de tema */
+:root {
+  /* Light theme (default) */
+  --bg-color: #f8f8f8;
+  --text-color: #333;
+  --card-bg: #fff;
+  --card-text: #666;
+  --sidebar-link: #3a3a3a;
+  --sidebar-link-hover: #000000;
+  --button-bg: #ddd;
+  --button-text: #333;
+  --section-bg: transparent;
+}
+
+[data-theme="dark"] {
+  /* Dark theme */
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --card-bg: #121212;
+  --card-text: #b0b0b0;
+  --sidebar-link: #cccccc;
+  --sidebar-link-hover: #ffffff;
+  --button-bg: #333;
+  --button-text: #f0f0f0;
+  --section-bg: #121212;
+}
+
 /* Definições de fontes e cores */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f8f8f8; /* Fundo claro */
-  color: #333; /* Texto preto */
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Layout da página */
 .container {
   display: flex;
   height: 100vh; /* Altura total da tela */
+}
+
+.language-switcher {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+
+.theme-switcher {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1000;
+}
+
+#theme-toggle {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.language-switcher button,
+#theme-toggle {
+  margin: 5px;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Menu Lateral */
@@ -38,14 +100,14 @@ body {
 
 .sidebar ul li a {
   text-decoration: none;
-  color: #3a3a3a;
+  color: var(--sidebar-link);
   font-size: 18px;
   display: block;
   padding: 10px 20px;
 }
 
 .sidebar ul li a:hover {
-  color: #000000;
+  color: var(--sidebar-link-hover);
 }
 
 /* Conteúdo Principal */
@@ -77,6 +139,8 @@ body {
 section {
   padding: 60px 20px;
   margin-top: 20px;
+  background-color: var(--section-bg);
+  transition: background-color 0.3s ease;
 }
 
 section h2 {
@@ -113,7 +177,14 @@ section a:hover {
   width: 100%;
   break-inside: avoid;
   margin-bottom: 20px;
-  background: #fff;
+  background: var(--card-bg);
+  transition: background-color 0.3s ease;
+}
+
+.card p {
+  padding: 20px;
+  font-size: 16px;
+  color: var(--card-text);
 }
 
 .card img {
@@ -127,22 +198,16 @@ section a:hover {
   padding: 20px;
 }
 
-.card p {
-  padding: 20px;
-  font-size: 16px;
-  color: #666;
-}
-
 .card .tecnologias {
   margin: 10px 0;
   text-align: center;
 }
 
 .card .tecnologias span {
-  background: #ddd;
+  background: var(--bg-color);
   padding: 10px;
   margin-right: 5px;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .card .links {
@@ -152,7 +217,7 @@ section a:hover {
 
 .card .links a {
   text-decoration: none;
-  color: #333;
+  color: var(--card-text);
   margin: 5px;
   font-size: 16px;
 }
@@ -186,16 +251,12 @@ section a:hover {
 
 /* Cards */
 .valor {
-  background: #fff;
+  background: var(--card-bg);
   padding: 25px;
 }
 
-/* Título (como você pediu) */
 .valor h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #333;
-  text-align: center;
+  color: var(--text-color);
 }
 
 /* Parágrafo */
@@ -231,6 +292,19 @@ section a:hover {
   /* Exibição do menu lateral quando acionado */
   .sidebar.open {
     left: 0;
+  }
+
+  @media (max-width: 768px) {
+    .theme-switcher {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+    }
+
+    /* Garante que o botão fique acima do menu quando aberto */
+    .theme-switcher {
+      z-index: 1001;
+    }
   }
 
   /* Alteração no conteúdo principal para ocupar toda a largura */
@@ -310,5 +384,11 @@ section a:hover {
   /* Ajuste no texto final da seção */
   #valores > p {
     font-size: 14px;
+  }
+
+  .language-switcher {
+    position: fixed;
+    top: 10px;
+    left: 10px;
   }
 }
