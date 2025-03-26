@@ -148,8 +148,8 @@ function checkTheme() {
     document.body.setAttribute('data-theme', savedTheme);
     updateIcon(savedTheme);
   } else if (prefersDarkScheme.matches) {
-    document.body.setAttribute('data-theme', 'dark');
-    updateIcon('dark');
+    document.body.setAttribute('data-theme', 'light');
+    updateIcon('light');
   }
 }
 
