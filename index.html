@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tiago Ramos Silva</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="/icons8-arco-iris-32.png" type="image/png">
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="theme-switcher">
+      <button id="theme-toggle">
+        <i class="fas fa-moon"></i> <!-- Ícone inicial (pode ser alterado via JS) -->
+      </button>
+    </div>
+    
+    <div class="container">
+      <!-- Botões de idioma -->
+      <div class="language-switcher">
+        <button onclick="changeLanguage('pt')">PT</button>
+        <button onclick="changeLanguage('en')">EN</button>
+      </div>
+  
+    <div class="container">
+      <!-- Menu Lateral -->
+      <nav class="sidebar">
+        <ul>
+          <li><a href="#intro"><i class="fa-solid fa-hand-peace"></i> <span data-key="intro">Intro</span></a></li>
+          <li><a href="#experiencia"><i class="fa fa-briefcase"></i> <span data-key="projetos">Projetos</span></a></li>
+          <li><a href="#valores"><i class="fa fa-star"></i> <span data-key="valores">Valores</span></a></li>
+          <li><a href="#contato"><i class="fa fa-address-book"></i> <span data-key="contato">Contato</span></a></li>
+        </ul>
+      </nav>
+
+      <!-- Conteúdo Principal -->
+      <div class="main-content">
+        <!-- Seção de Introdução -->
+        <section id="intro">
+          <h2 class="hello-text">
+            Hello Word! <i class="fa-solid fa-hand-peace"></i>
+          </h2>
+          <h1 class="typing-text"></h1>
+        </section>
+
+        <!-- Seção de Experiência -->
+        <section id="experiencia">
+          <h2><i class="fa fa-briefcase" aria-hidden="true"></i> <span data-key="projetos">Projetos:</span></h2>
+          <p>
+            <span data-key="descricao-projetos">
+              Aqui vão algumas das minhas experiências em projetos. Você pode conferir mais no
+            </span>
+            <a href="https://github.com/tiagoramossilva">GitHub</a>.
+          </p>
+          <div class="projetos-container">
+            <div class="card">
+              <img src="img-flutter.png" alt="Imagem do projeto" />
+                <h3 data-key="titulo-agenda+">Agenda+ - Aplicativo de Gestão de Eventos</h3>
+      
+                <p data-key="texto-agenda+">
+                  Agenda+ é um aplicativo desenvolvido em Flutter como parte do
+                  meu projeto final na disciplina de Desenvolvimento Mobile. O
+                  objetivo do aplicativo é permitir aos usuários gerenciar seus
+                  eventos de maneira prática e organizada, oferecendo
+                  funcionalidades para adicionar, editar, visualizar e excluir
+                  eventos de forma rápida.
+                </p>
+      
+              <div class="tecnologias">
+                <span>Flutter</span>
+                <span>Dart</span>
+                <span>C++</span>
+              </div>
+              <div class="links">
+                <a
+                  href="https://github.com/tiagoramossilva/pojetoFinalFlutter"
+                  target="_blank"
+                  data-key="code"
+                  >Código</a
+                >
+              </div>
+            </div>
+            <div class="card">
+              <img src="img-studio.png" alt="Imagem do projeto" />
+              <h3 data-key="titulo-zenith">Zenith Studio - Website de Estúdio de Tatuagem.</h3>
+              <p data-key="texto-zenith">
+                Zenith Studio é um site desenvolvido para um estúdio de
+                tatuagem, com o objetivo de oferecer uma experiência online
+                intuitiva e informativa para clientes em potencial. O site
+                apresenta uma interface visualmente atraente, com um design
+                moderno que reflete a identidade artística e profissional do
+                estúdio.
+              </p>
+              <div class="tecnologias">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+              <div class="links">
+                <a
+                  href="https://github.com/tiagoramossilva/siteZenith"
+                  target="_blank"
+                  data-key="code"
+                  >Código</a
+                >
+              </div>
+            </div>
+            <div class="card">
+              <img src="img-stock.png" alt="Imagem do projeto" />
+              <h3 data-key="stock-titulo">
+                Sistema de Gerenciamento de Estoque e Controle de Compras.
+              </h3>
+              <p data-key="stock-texto">
+                O Sistema de Gerenciamento de Estoque e Controle de Compras é um
+                projeto desenvolvido como parte da minha formação acadêmica. O
+                objetivo principal do sistema é fornecer uma solução eficiente
+                para o controle de inventário e a gestão de compras de uma
+                empresa. O sistema permite que os usuários acompanhem o estoque
+                de produtos, registrem compras e atualizem as quantidades
+                automaticamente, garantindo maior precisão e agilidade no
+                processo.
+              </p>
+              <div class="tecnologias">
+                <span>React</span>
+                <span>Firebase</span>
+                <span>CSS</span>
+              </div>
+              <div class="links">
+                <a
+                  href="https://github.com/tiagoramossilva/ProjetoAplicadoIII"
+                  target="_blank"
+                  data-key="code"
+                  >Código</a
+                >
+              </div>
+            </div>
+            <div class="card">
+              <img src="img-debora.png" alt="Imagem do projeto" />
+              <h3 data-key="titulo-debora">Layout para e-commerce Débora Acessorios.</h3>
+              <p data-key="texto-debora">
+                O protótipo do site Débora Acessórios foi desenvolvido no Figma
+                com o objetivo de criar uma experiência de compra online fluida
+                e atraente para o e-commerce especializado em joias. O projeto
+                busca refletir a elegância e sofisticação das peças da marca, ao
+                mesmo tempo que proporciona aos usuários uma navegação intuitiva
+                e agradável.
+              </p>
+              <div class="tecnologias">
+                <span>Figma</span>
+              </div>
+              <div class="links">
+                <a
+                  href="https://www.figma.com/proto/lUKWxnYYDoJvEzLckNEaRD/Agenda%2B?node-id=1911-3&t=WuSZA1p1e6Q8geuS-1"
+                  target="_blank"
+                  data-key="prot"
+                  >Protótipo</a
+                >
+              </div>
+            </div>
+            <div class="card">
+              <img src="img-rebeca.png" alt="Imagem do projeto" />
+              <h3 data-key="titulo-rebeca">Rebeca Ferrari - Site.</h3>
+              <p data-key="texto-rebeca">
+                O site Rebeca Ferrari Psicóloga foi desenvolvido com o objetivo
+                de oferecer uma plataforma digital que reflita a abordagem
+                acolhedora e profissional da psicóloga Rebeca Ferrari. O site
+                foi projetado para facilitar o contato de novos pacientes,
+                oferecer informações sobre os serviços de psicologia, e reforçar
+                a presença online de Rebeca, ajudando-a a atrair mais clientes e
+                expandir seu consultório.
+              </p>
+              <div class="tecnologias">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+              <div class="links">
+                <a href="https://rebecaferraripsicologa.com/" target="_blank" data-key="website"
+                  >Site</a
+                >
+                <a
+                  href="https://github.com/tiagoramossilva/rebecaferrari-site"
+                  target="_blank"
+                  data-key="code"
+                  >Código</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Seção de Valores -->
+        <section id="valores">
+          <h2><i class="fa fa-star" aria-hidden="true"></i> <span data-key="valores">Valores</span></h2>
+          <div class="valores-list">
+            <div class="valor">
+              <h3 data-key="titulo-value1">Comprometimento com a Qualidade</h3>
+              <p data-key="texto-value1">
+                Acredito que a excelência deve estar presente em cada linha de
+                código. Meu compromisso é entregar soluções que atendam às
+                necessidades do cliente, mas também que sejam robustas,
+                escaláveis e de fácil manutenção. Cada projeto é uma
+                oportunidade de superar expectativas e entregar um trabalho de
+                alta qualidade.
+              </p>
+            </div>
+            <div class="valor">
+              <h3 data-key="titulo-value2">Inovação Contínua</h3>
+              <p data-key="texto-value2">
+                O mundo da tecnologia está em constante evolução, e para
+                acompanhar esse ritmo, busco sempre me atualizar com as mais
+                recentes tendências e ferramentas do mercado. Essa busca
+                constante por inovação garante que minhas soluções sejam
+                modernas, eficientes e preparadas para o futuro.
+              </p>
+            </div>
+            <div class="valor">
+              <h3 data-key="titulo-value3">Colaboração e Trabalho em Equipe</h3>
+              <p data-key="texto-value3">
+                Embora a programação muitas vezes pareça um trabalho solitário,
+                acredito que o verdadeiro sucesso vem da colaboração. Trabalhar
+                em equipe, compartilhar ideias e aprender com outros
+                profissionais são atitudes fundamentais para criar soluções mais
+                completas e eficientes.
+              </p>
+            </div>
+            <div class="valor">
+              <h3 data-key="titulo-value4">Ética e Transparência</h3>
+              <p data-key="texto-value4">
+                A ética no desenvolvimento de software é fundamental. Prezo pela
+                transparência em todas as fases do projeto, desde o planejamento
+                até a entrega final, garantindo que o cliente esteja sempre
+                ciente do andamento do trabalho e das soluções propostas.
+                Transparência é essencial para construir uma relação de
+                confiança.
+              </p>
+            </div>
+          </div>
+          <p data-key="texto-value5">
+            Meus valores são a base que guia cada decisão que tomo ao longo do
+            meu trabalho como desenvolvedor. Eles refletem não apenas meu
+            compromisso com a qualidade técnica, mas também minha postura
+            profissional e ética. Acredito que, ao seguir esses princípios,
+            posso não apenas criar soluções tecnológicas de impacto, mas também
+            construir relações duradouras e de confiança com meus clientes e
+            colegas de equipe. Cada projeto que desenvolvo é uma oportunidade de
+            aplicar esses valores e criar algo significativo para todos os
+            envolvidos.
+          </p>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section id="contato">
+          <h2><i class="fa fa-address-book" aria-hidden="true"></i> <span data-key="contato">Contato</span></h2>
+          <p>
+            Email:
+            <a href="mailto:tiagoramossilva40@gmail.com"
+              >tiagoramossilva40@gmail.com</a
+            >
+          </p>
+          <p>
+            LinkedIn:
+            <a
+              href="https://www.linkedin.com/in/tiago-ramos-silva-59a719b0/"
+              target="_blank"
+              >https://www.linkedin.com/in/tiago-ramos-silva-59a719b0/</a
+            >
+          </p>
+          <p>
+            GitHub:
+            <a href="https://github.com/tiagoramossilva"
+            target="_blank"
+              >https://github.com/tiagoramossilva</a
+            >
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

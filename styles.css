@@ -1,0 +1,387 @@
+/* Reset de margens e padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis de tema */
+:root {
+  /* Light theme (default) */
+  --bg-color: #f8f8f8;
+  --text-color: #333;
+  --card-bg: #fff;
+  --card-text: #666;
+  --sidebar-link: #3a3a3a;
+  --sidebar-link-hover: #000000;
+  --button-bg: #ddd;
+  --button-text: #333;
+  --section-bg: transparent;
+}
+
+[data-theme="dark"] {
+  /* Dark theme */
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --card-bg: #121212;
+  --card-text: #b0b0b0;
+  --sidebar-link: #cccccc;
+  --sidebar-link-hover: #ffffff;
+  --button-bg: #333;
+  --button-text: #f0f0f0;
+  --section-bg: #121212;
+}
+
+/* Definições de fontes e cores */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Layout da página */
+.container {
+  display: flex;
+  height: 100vh; /* Altura total da tela */
+}
+
+.language-switcher {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+
+.theme-switcher {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1000;
+}
+
+#theme-toggle {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.language-switcher button,
+#theme-toggle {
+  margin: 5px;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Menu Lateral */
+.sidebar {
+  width: 250px;
+  position: fixed;
+  top: 30%;
+  left: 0;
+  height: 100%;
+  padding-top: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: var(--sidebar-link);
+  font-size: 18px;
+  display: block;
+  padding: 10px 20px;
+}
+
+.sidebar ul li a:hover {
+  color: var(--sidebar-link-hover);
+}
+
+/* Conteúdo Principal */
+.main-content {
+  margin-left: 250px; /* Espaço para o menu lateral */
+  width: 100%;
+  padding: 40px 20px;
+}
+
+/* Seção de Introdução */
+#intro {
+  text-align: center;
+  padding: 200px 0; /* Distância da parte superior */
+  height: 90%;
+}
+
+.hello-text {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.typing-text {
+  font-size: 50px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* Seções de Projetos, Valores e Contato */
+section {
+  padding: 60px 20px;
+  margin-top: 20px;
+  background-color: var(--section-bg);
+  transition: background-color 0.3s ease;
+}
+
+section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+section p {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+section a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section a:hover {
+  color: #007bff;
+}
+
+.projetos-container {
+  column-count: 3;
+  column-gap: 20px;
+}
+
+.card {
+  display: inline-block;
+  width: 100%;
+  break-inside: avoid;
+  margin-bottom: 20px;
+  background: var(--card-bg);
+  transition: background-color 0.3s ease;
+}
+
+.card p {
+  padding: 20px;
+  font-size: 16px;
+  color: var(--card-text);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  padding: 10px;
+}
+.card h3 {
+  font-size: 22px;
+  padding: 20px;
+  text-align: center;
+}
+
+.card .tecnologias {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.card .tecnologias span {
+  background: var(--bg-color);
+  padding: 10px;
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.card .links {
+  padding: 20px;
+  text-align: center;
+}
+
+.card .links a {
+  text-decoration: none;
+  color: var(--card-text);
+  margin: 5px;
+  font-size: 16px;
+}
+
+.card .links a:hover {
+  color: #007bff;
+}
+
+/* Seção de Valores */
+/* --- Seção Valores --- */
+#valores {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+#valores h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+/* --- Lista de Valores --- */
+/* Container principal */
+.valores-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+  grid-template-rows: auto auto; /* 2 linhas */
+  gap: 20px; /* Espaço entre os cards */
+}
+
+/* Cards */
+.valor {
+  background: var(--card-bg);
+  padding: 25px;
+}
+
+.valor h3 {
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Parágrafo */
+.valor p {
+  color: #666;
+  line-height: 1.5;
+  font-size: 15px;
+  text-align: center;
+}
+
+/* Texto final da seção */
+#valores > p {
+  text-align: center;
+  color: #555;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 30px auto 0;
+}
+
+/* Responsividade */
+/* Responsividade */
+@media (max-width: 768px) {
+  /* Ajuste no menu lateral */
+  .sidebar {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .theme-switcher {
+      position: absolute;
+      top: 50px;
+      right: 10px;
+    }
+
+    /* Garante que o botão fique acima do menu quando aberto */
+    .theme-switcher {
+      z-index: 1001;
+    }
+  }
+
+  /* Alteração no conteúdo principal para ocupar toda a largura */
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  /* Ajustes no cabeçalho e nas seções */
+  #intro {
+    padding: 100px 20px; /* Menos distância do topo para caber na tela */
+    height: auto; /* Deixa o intro adaptável */
+  }
+
+  .hello-text,
+  .typing-text {
+    font-size: 30px; /* Reduz o tamanho da fonte */
+  }
+
+  section {
+    padding: 40px 20px; /* Menos padding para se ajustar melhor */
+  }
+
+  section h2 {
+    font-size: 24px; /* Tamanho de título reduzido */
+  }
+
+  section p {
+    font-size: 16px; /* Reduzir o tamanho da fonte para leitura confortável */
+  }
+
+  /* Ajustes nos cards de projetos */
+  .projetos-container {
+    display: inline; /* Cards ficam em coluna única */
+  }
+
+  .card {
+    width: 100%; /* Cards com largura total */
+    margin-bottom: 20px; /* Espaçamento entre os cards */
+  }
+
+  .card h3 {
+    font-size: 18px; /* Reduz tamanho do título */
+  }
+
+  .card p {
+    font-size: 14px; /* Font menor para descrição */
+  }
+
+  .card .tecnologias {
+    display: block;
+    text-align: center;
+  }
+
+  .card .tecnologias span {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+
+  .card .links a {
+    font-size: 14px; /* Ajusta o tamanho da fonte dos links */
+  }
+
+  /* Ajuste para a seção de valores */
+  #valores .valores-list {
+    grid-template-columns: 1fr; /* Coluna única para os valores */
+  }
+
+  .valor h3 {
+    font-size: 18px; /* Título de valor menor */
+  }
+
+  .valor p {
+    font-size: 14px; /* Font menor para as descrições dos valores */
+  }
+
+  /* Ajuste no texto final da seção */
+  #valores > p {
+    font-size: 14px;
+  }
+
+  .language-switcher {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
